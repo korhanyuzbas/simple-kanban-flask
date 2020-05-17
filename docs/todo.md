@@ -1,0 +1,6 @@
+- Flask run host and port is hardcoded, can be added as environment variable
+- Fix circular imports
+- `from celery import task` not working, celery must be called on app.celery variable. Fix issue 
+- Cronjob can be created in case of Celery fails to run task
+- More coverage
+- Fasten unittest
