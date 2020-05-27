@@ -13,7 +13,7 @@ from database.models import User, Board, Card, Comment
 class BaseTestCase(TestCase):
     def setUp(self) -> None:
         app = create_app(
-            MONGODB_SETTINGS={"DB": "iqvizyon-testing"},
+            MONGODB_SETTINGS={"DB": "kanban-testing"},
             CELERY_ALWAYS_EAGER=True
         )
         app.testing = True

@@ -1,6 +1,6 @@
 FROM python:3.6
 
-ENV PROJECT_ROOT /home/iqvizyon
+ENV PROJECT_ROOT /home/kanban
 
 COPY ./requirements.txt $PROJECT_ROOT/
 RUN pip install -r $PROJECT_ROOT/requirements.txt

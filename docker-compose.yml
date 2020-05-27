@@ -16,10 +16,10 @@ services:
       - "8081:8081"
     command: flask run --port 8081 --host 0.0.0.0
     volumes:
-      - ./src:/home/iqvizyon/src/
-      - .env:/home/iqvizyon/.env
+      - ./src:/home/kanban/src/
+      - .env:/home/kanban/.env
     environment:
-      KANBAN_ENV_FILE: ${KANBAN_ENV_FILE:-/home/iqvizyon/.env}
+      KANBAN_ENV_FILE: ${KANBAN_ENV_FILE:-/home/kanban/.env}
     links:
       - redis
       - mongo
@@ -30,10 +30,10 @@ services:
       dockerfile: docker/worker.dockerfile
     command: celery worker -A app.celery -l info
     volumes:
-      - ./src:/home/iqvizyon/src/
-      - .env:/home/iqvizyon/.env
+      - ./src:/home/kanban/src/
+      - .env:/home/kanban/.env
     environment:
-      KANBAN_ENV_FILE: ${KANBAN_ENV_FILE:-/home/iqvizyon/.env}
+      KANBAN_ENV_FILE: ${KANBAN_ENV_FILE:-/home/kanban/.env}
     links:
       - redis
       - mongo
